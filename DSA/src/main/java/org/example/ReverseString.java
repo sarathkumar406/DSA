@@ -21,7 +21,7 @@ public class ReverseString {
         System.out.println(String.valueOf(strArr));
     }
 
-    private static String reverseString(String str) {
+    static String reverseString(String str) {
 
         char[] strArr = str.toCharArray();
         int n = strArr.length;
