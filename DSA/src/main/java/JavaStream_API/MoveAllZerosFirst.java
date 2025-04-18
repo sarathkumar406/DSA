@@ -20,7 +20,28 @@ public class MoveAllZerosFirst {
                .flatMap(Collection::stream)
                .collect(Collectors.toList());
 
+        List<List<Integer>> result = list.stream()
+                .collect(Collectors.partitioningBy(x->x==0))
+                .values().stream().collect(Collectors.toList());
+
         System.out.println(res);
+
+        System.out.println(result);
+
+
+        int index  = 0;
+
+        for(int num: arr){
+            if(num != 0){
+                arr[index++] = num;
+            }
+        }
+
+        while(index < arr.length){
+            arr[index++] = 0;
+        }
+
+        System.out.println(Arrays.toString(arr));
 
     }
 }
